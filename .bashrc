@@ -112,11 +112,3 @@ pushdotfiles() {
   git commit -m "$timestamp: Commit by bash script"
   git push -u origin main
 }
-
-rmfoldergit() {
-  git filter-branch --tree-filter "rm -rf $1" --prune-empty HEAD
-  git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
-  git commit -m "Removing $1 from git history"
-  git gc
-  # git push origin main --force
-}
