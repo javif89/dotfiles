@@ -40,6 +40,7 @@ alias dockerdesktop="systemctl --user start docker-desktop"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
+alias home="cd $HOME"
 
 alias turnoff="sudo shutdown now"
 
@@ -111,4 +112,8 @@ pushdotfiles() {
   timestamp="$(date +"%Y-%m-%d %T")"
   git commit -m "$timestamp: Commit by bash script"
   git push -u origin main
+}
+
+helixdocs() {
+  chromium "https://docs.helix-editor.com/"
 }
