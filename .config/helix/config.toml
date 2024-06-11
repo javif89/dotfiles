@@ -1,4 +1,4 @@
-theme = "monokai_pro_spectrum"
+theme = "spectrumtransparent"
 
 [editor.file-picker]
 hidden = false
