@@ -1,4 +1,17 @@
-theme = "spectrumtransparent"
+theme = "spectrumnobg"
+
+[keys.normal]
+"g" = { "v" = ["vsplit", "jump_view_up", "goto_definition"] }
+
+[keys.normal.space]
+"h" = "jump_view_left"
+"l" = "jump_view_right"
+"q" = "wclose"
+"o" = "wonly"
 
 [editor.file-picker]
 hidden = false
+git-ignore = false
+
+[editor]
+color-modes = true
