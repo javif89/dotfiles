@@ -49,37 +49,37 @@ chromium() {
 }
 
 hyprland;
-waybar;
-kitty;
-chromium;
-stw
-pac helix
-pac git
-pac base-devel
-pac pipewire
-pac pipewire-pulse
-pac pipewire-alsa
-pac wireplumber
-pac mako
+# waybar;
+# kitty;
+# chromium;
+# stw
+# pac helix
+# pac git
+# pac base-devel
+# pac pipewire
+# pac pipewire-pulse
+# pac pipewire-alsa
+# pac wireplumber
+# pac mako
 
-echo "Syncing config files"
-rm ~/.bash_profile && rm ~/.bashrc
-stow .
+# echo "Syncing config files"
+# rm ~/.bash_profile && rm ~/.bashrc
+# stow .
 
-echo "Setting up yay"
+# echo "Setting up yay"
 
-mkdir -p "$HOME/yaytemp"
-cd "$HOME/yaytemp"
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+# mkdir -p "$HOME/yaytemp"
+# cd "$HOME/yaytemp"
+# git clone https://aur.archlinux.org/yay.git
+# cd yay
+# makepkg -si
 
-echo "Installing fonts"
-sudo chmod +x ./install-fonts.sh
-./install-fonts.sh
+# echo "Installing fonts"
+# sudo chmod +x ./install-fonts.sh
+# ./install-fonts.sh
 
-echo "Cleanup"
+# echo "Cleanup"
 
-rm -rf "$HOME/yaytemp"
+# rm -rf "$HOME/yaytemp"
 
-echo "You should be ready to go"
+# echo "You should be ready to go"

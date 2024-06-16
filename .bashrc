@@ -42,6 +42,10 @@ alias ...="cd ../../"
 alias ....="cd ../../../"
 alias home="cd $HOME"
 
+# Go
+alias gr="go run ."
+alias gmf="go fmt"
+
 alias turnoff="sudo shutdown now"
 
 bkup() {
@@ -91,7 +95,7 @@ rlbg() {
 
 rlwaybar() {
   killall waybar 
-  waybar &
+  waybar > /dev/null 2>&1 &
 }
 
 cpconf() {
@@ -116,4 +120,9 @@ pushdotfiles() {
 
 helixdocs() {
   chromium "https://docs.helix-editor.com/"
+}
+. "$HOME/.cargo/env"
+
+mkcd() {
+  mkdir "$1" && cd "$1"
 }
