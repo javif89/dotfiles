@@ -49,7 +49,7 @@ chromium() {
 }
 
 hyprland;
-# waybar;
+waybar;
 # kitty;
 # chromium;
 # stw
@@ -57,10 +57,10 @@ hyprland;
 # pac git
 # pac base-devel
 # pac pipewire
-# pac pipewire-pulse
-# pac pipewire-alsa
-# pac wireplumber
-# pac mako
+pac pipewire-pulse
+pac pipewire-alsa
+pac wireplumber
+pac mako
 
 # echo "Syncing config files"
 # rm ~/.bash_profile && rm ~/.bashrc
@@ -75,8 +75,8 @@ hyprland;
 # makepkg -si
 
 # echo "Installing fonts"
-# sudo chmod +x ./install-fonts.sh
-# ./install-fonts.sh
+sudo chmod +x ./install-fonts.sh
+./install-fonts.sh
 
 # echo "Cleanup"
 
