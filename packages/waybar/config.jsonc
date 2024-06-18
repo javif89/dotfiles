@@ -8,13 +8,13 @@
     "height": 0,
     "modules-left": [
         "hyprland/workspaces",
-        "tray",
+        "tray"
+        // "hyprland/window",
     ],
     "modules-center": [
-        "hyprland/window",
+        "clock",
     ],
     "modules-right": [
-        "clock",
         "memory",
         "cpu",
         "pulseaudio"

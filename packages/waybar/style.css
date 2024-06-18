@@ -48,10 +48,6 @@ tooltip {
     /* border-radius: 10px; */
 }
 
-#custom-language,
-#custom-updates,
-#custom-caffeine,
-#custom-weather,
 #window,
 #clock,
 #battery,
@@ -90,7 +86,7 @@ tooltip {
 
 #clock {
     color: #f5e0dc;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px;
     margin-left: 5px;
     border-right: 0px;
 }

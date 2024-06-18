@@ -1,0 +1,92 @@
+name: Arch system setup
+
+plays:
+  fullsetup:
+    - yay
+    - hyprland
+    - kitty
+    - pipewire
+    - waybar
+    - bash
+    - fonts
+    - yazi
+  configsync:
+    - hyprland
+    - kitty
+    - waybar
+    - bash
+
+tasks:
+  yay:
+    name: Set up yay
+    run: ./packages/yay/setup-yay.sh
+  hyprland:
+    name: Set up hyprland
+    install:
+      - hyprland
+      - xdg-desktop-portal-hyprland
+      - swaybg
+      - hypridle
+      - hyprlock
+    copy:
+      from: ./packages/hyprland
+      to: ~/.config/hypr
+  kitty:
+    name: Set up kitty
+    install:
+      - kitty
+    copy:
+      from: ./packages/kitty
+      to: ~/.config/kitty
+  waybar:
+    name: Set up waybar
+    install:
+      - waybar
+    copy:
+      from: ./packages/waybar
+      to: ~/.config/waybar
+  pipewire:
+    name: Set up pipewire audio
+    install:
+      - pipewire
+      - pipewire-pulse
+      - pipewire-alsa
+      - wireplumber
+  bash:
+    name: Set up bash profile config files
+    copy:
+      from: ./packages/bashprofile/config
+      to: ~/bashconfig
+    copy:
+      from: ./packages/bashprofile/.bash_profile
+      to: ~/.bash_profile
+    copy:
+      from: ./packages/bashprofile/.bashrc
+      to: ~/.bashrc
+  fonts:
+    name: Set up system fonts
+    install:
+      - ttf-nerd-fonts-symbols-common 
+      - otf-firamono-nerd 
+      - inter-font   
+      - ttf-font-awesome
+      - ttf-fantasque-nerd 
+      - noto-fonts 
+      - noto-fonts-emoji 
+      - ttf-comfortaa  
+      - ttf-jetbrains-mono-nerd 
+      - ttf-icomoon-feather 
+      - ttf-iosevka-nerd  
+      - adobe-source-code-pro-fonts
+  yazi:
+    name: Set up yazi
+    install:
+      - yazi
+      - ffmpegthumbnailer
+      - unarchiver
+      - jq
+      - poppler
+      - fd
+      - ripgrep
+      - fzf
+      - zoxide
