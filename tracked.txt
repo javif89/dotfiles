@@ -1,2 +1,5 @@
 zellij
 kitty
+ulauncher
+fastfetch
+lazygit

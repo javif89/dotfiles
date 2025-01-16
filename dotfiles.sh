@@ -13,4 +13,10 @@ function put() {
 	done < tracked.txt
 }
 
+function pushupdate() {
+	git add .
+	git commit -m "Update"
+	git push
+}
+
 $1
