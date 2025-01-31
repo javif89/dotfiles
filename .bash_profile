@@ -12,16 +12,10 @@ if [[ -z "$ZELLIJ" ]]; then
 fi
 
 # Aliases
-alias bisnow="~/bisnow"
 alias vim="nvim"
 alias nv="nvim"
 
-# Color LS
-colorflag="-G"
-alias ls="command ls ${colorflag}"
-alias l="ls -lF ${colorflag}" # all files, in long format
-alias la="ls -laF ${colorflag}" # all files inc dotfiles, in long format
-alias lsd='ls -lF ${colorflag} | grep "^d"' # only directories
+alias ls='eza -lh --group-directories-first --icons'
 
 # Quicker navigation
 alias ..="cd .."
@@ -48,7 +42,7 @@ function nvimc() {
 # Git
 # You must install Git first
 alias gs='git status'
-alias ga='git add .'
+alias ga='git add -A'
 alias gc='git commit -m' # requires you to type a commit message
 alias grm='git rm $(git ls-files --deleted)'
 alias gb="git checkout -b"
@@ -115,53 +109,21 @@ alias jig="vendor/bin/jigsaw"
 # Golang
 alias gr="go run ."
 alias gmt="go mod tidy"
-alias ccl="cobra-cli"
 
-# # Functions
-# Running tests in containers
-function test() {
-	clear
-	de "$1" ./vendor/bin/phpunit --testdox
-}
-
-function testf() {
-	clear
-  da "$1" config:clear
-	de "$1" ./vendor/bin/phpunit --testdox --filter="$2"
-}
-
-function docker_artisan() {
-	de "$1" php artisan "$2" "${@:3}"
-}
-
-
-function commit() {
-	ga
-	gc "$1"
-}
-
-function site() {
-	cd ~/Sites/"$1"
-}
-
-function sdpl() {
-	cd ~/Sites/"$1"/deploy/local
-}
-
-# Temp
-function tcf() {
-    clear
-    de contacts ./vendor/bin/phpunit --testdox --filter="$1"
-}
 
 # Open something in the projects folder
 function o() {
 	cd "$HOME/projects/$1"
 }
 
-function helixdocs() {
-	open "https://docs.helix-editor.com/usage.html"
+function installflux() {
+	composer config repositories.flux-pro composer https://composer.fluxui.dev
+	composer config http-basic.composer.fluxui.dev javier0eduardo@hotmail.com 5afd62db-570b-4081-8b56-f48ab7fbf21b
+	composer require livewire/flux-pro
 }
 
 eval "$(starship init bash)"
 . "$HOME/.cargo/env"
+
+# Add composer global bin
+export PATH="$PATH:~/.config/composer/vendor/bin"
